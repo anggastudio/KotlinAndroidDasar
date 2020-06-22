@@ -34,9 +34,9 @@ open class BaseActivity : AppCompatActivity() {
     }
 
     protected open fun gotoProfileActivity() {
-//        val intent = Intent(this, ProfileActivity::class.java)
-//        startActivity(intent)
-//        finish()
+        val intent = Intent(this, ProfileActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 
     protected open fun showToast(message: String) {
