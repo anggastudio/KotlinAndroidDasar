@@ -10,7 +10,7 @@
 
     <ImageView
         android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:adjustViewBounds="true"
         android:src="@drawable/anggastudio_logo" />

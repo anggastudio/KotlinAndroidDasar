@@ -5,7 +5,9 @@
     <color name="colorAccent">#00F177</color>
 
     <color name="colorWhite">#FFFFFF</color>
+    <color name="colorBlack">#000000</color>
 
     <color name="bg">@color/colorWhite</color>
+
 
 </resources>
