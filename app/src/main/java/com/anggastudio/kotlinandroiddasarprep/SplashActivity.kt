@@ -1,6 +1,5 @@
 package com.anggastudio.kotlinandroiddasarprep
 
-import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 
@@ -13,12 +12,6 @@ class SplashActivity : BaseActivity() {
         Handler().postDelayed({
             gotoLoginActivity()
         }, 3000)
-    }
-
-    private fun gotoLoginActivity() {
-        val intent = Intent(this, LoginActivity::class.java)
-        startActivity(intent)
-        finish()
     }
 
 }

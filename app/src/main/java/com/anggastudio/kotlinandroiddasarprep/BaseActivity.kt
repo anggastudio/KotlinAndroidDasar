@@ -1,9 +1,11 @@
 package com.anggastudio.kotlinandroiddasarprep
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 open class BaseActivity : AppCompatActivity() {
@@ -23,6 +25,22 @@ open class BaseActivity : AppCompatActivity() {
             window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
             window.statusBarColor = Color.WHITE
         }
+    }
+
+    protected open fun gotoLoginActivity() {
+        val intent = Intent(this, LoginActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
+
+    protected open fun gotoProfileActivity() {
+//        val intent = Intent(this, ProfileActivity::class.java)
+//        startActivity(intent)
+//        finish()
+    }
+
+    protected open fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 
 }
