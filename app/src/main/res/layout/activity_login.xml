@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bg"
     android:gravity="center"
     android:orientation="vertical"
     tools:context=".LoginActivity">
@@ -61,28 +62,35 @@
             android:padding="16dp">
 
             <EditText
+                android:id="@+id/et_username"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:layout_margin="4dp"
                 android:background="@drawable/border"
                 android:fontFamily="@font/quicksand_reg"
                 android:hint="Username"
+                android:inputType="text"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
+                android:textCursorDrawable="@null"
                 android:textSize="14sp" />
 
             <EditText
+                android:id="@+id/et_password"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:layout_margin="4dp"
                 android:background="@drawable/border"
                 android:fontFamily="@font/quicksand_reg"
                 android:hint="Password"
+                android:inputType="textPassword"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
+                android:textCursorDrawable="@null"
                 android:textSize="14sp" />
 
             <Button
+                android:id="@+id/btn_login"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:backgroundTint="@color/colorPrimary"
