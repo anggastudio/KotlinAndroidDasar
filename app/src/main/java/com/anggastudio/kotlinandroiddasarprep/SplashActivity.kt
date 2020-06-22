@@ -8,8 +8,6 @@ class SplashActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        hideToolbar()
-        setWhiteStatusBar()
         setContentView(R.layout.activity_splash)
 
         Handler().postDelayed({
@@ -20,6 +18,7 @@ class SplashActivity : BaseActivity() {
     private fun gotoLoginActivity() {
         val intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
+        finish()
     }
 
 }
