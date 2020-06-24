@@ -13,6 +13,7 @@ class ProfileActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
 
+        ful
         ivAvatar.setOnClickListener { openImagePicker() }
         btnSignOut.setOnClickListener { signOut() }
     }

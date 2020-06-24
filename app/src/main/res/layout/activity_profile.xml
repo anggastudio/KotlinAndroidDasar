@@ -32,6 +32,7 @@
             android:src="@drawable/ic_launcher_background" />
 
         <TextView
+            android:id="@+id/tvFullName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/quicksand_bold"
@@ -41,8 +42,10 @@
             android:textSize="16sp" />
 
         <TextView
+            android:id="@+id/tvEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="5dp"
             android:fontFamily="@font/quicksand_reg"
             android:text="email" />
 
