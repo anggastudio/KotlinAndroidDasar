@@ -2,6 +2,7 @@ package com.anggastudio.kotlinandroiddasarprep
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CircleCrop
 import com.esafirm.imagepicker.features.ImagePicker
@@ -13,14 +14,17 @@ class ProfileActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
 
-        tvFullName.setOnClickListener { editText("Edit Full Name", tvFullName.text.toString()) }
-        tvEmail.setOnClickListener { editText("Edit Email", tvEmail.text.toString()) }
+        tvFullName.setOnClickListener { editText("Edit Full Name", tvFullName) }
+        tvEmail.setOnClickListener { editText("Edit Email", tvEmail) }
         ivAvatar.setOnClickListener { openImagePicker() }
         btnSignOut.setOnClickListener { signOut() }
     }
 
-    private fun editText(title: String, textToEdit: String) {
-        val editTextFragment = EditTextFragment.newInstance(title, textToEdit)
+    private fun editText(title: String, textView: TextView) {
+        val editTextFragment = EditTextFragment.newInstance(title, textView.text.toString())
+        editTextFragment.setOnEditListener { newText: String ->
+            textView.text = newText
+        }
         editTextFragment.show(supportFragmentManager, "editTextFragment")
     }
 
