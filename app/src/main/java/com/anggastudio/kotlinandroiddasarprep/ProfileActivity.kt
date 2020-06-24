@@ -13,9 +13,15 @@ class ProfileActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
 
-        ful
+        tvFullName.setOnClickListener { editText("Edit Full Name", tvFullName.text.toString()) }
+        tvEmail.setOnClickListener { editText("Edit Email", tvEmail.text.toString()) }
         ivAvatar.setOnClickListener { openImagePicker() }
         btnSignOut.setOnClickListener { signOut() }
+    }
+
+    private fun editText(title: String, textToEdit: String) {
+        val editTextFragment = EditTextFragment.newInstance(title, textToEdit)
+        editTextFragment.show(supportFragmentManager, "editTextFragment")
     }
 
     private fun openImagePicker() {

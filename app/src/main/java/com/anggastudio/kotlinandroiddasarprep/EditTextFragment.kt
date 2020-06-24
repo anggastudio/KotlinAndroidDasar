@@ -5,17 +5,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
+import kotlinx.android.synthetic.main.fragment_edit_text.*
 
-private const val ARG_PARAM1 = "param1"
+private const val TITLE = "title"
+private const val TEXT_TO_EDIT = "param1"
 
 class EditTextFragment : DialogFragment() {
 
-    private var param1: String? = null
+    private var mTitle: String? = null
+    private var mTextToEdit: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
+            mTitle = it.getString(TITLE)
+            mTextToEdit = it.getString(TEXT_TO_EDIT)
         }
     }
 
@@ -29,16 +33,18 @@ class EditTextFragment : DialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        tvTitle.text = mTitle
+        etNewText.setText(mTextToEdit)
     }
 
     companion object {
 
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance(title: String, textToEdit: String) =
             EditTextFragment().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
+                    putString(TITLE, title)
+                    putString(TEXT_TO_EDIT, textToEdit)
                 }
             }
     }
