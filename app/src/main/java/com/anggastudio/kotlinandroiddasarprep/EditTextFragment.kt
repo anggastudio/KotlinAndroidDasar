@@ -5,13 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.fragment.app.DialogFragment
+import androidx.appcompat.app.AppCompatDialogFragment
 import kotlinx.android.synthetic.main.fragment_edit_text.*
 
 private const val TITLE = "title"
 private const val TEXT_TO_EDIT = "param1"
 
-class EditTextFragment : DialogFragment() {
+class EditTextFragment : AppCompatDialogFragment() {
 
     private var onEditListener: (String) -> Unit? = {}
     private var mTitle: String? = null
@@ -19,6 +19,7 @@ class EditTextFragment : DialogFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setStyle(STYLE_NO_TITLE, 0);
         arguments?.let {
             mTitle = it.getString(TITLE)
             mTextToEdit = it.getString(TEXT_TO_EDIT)
