@@ -9,3 +9,7 @@ z
 Japp/src/main/java/com/anggastudio/kotlinandroiddasarprep/SplashActivity.kt,a\c\acb8da94455bf7ea561ccd0588c8ea0eae97c844
 y
 Iapp/src/main/java/com/anggastudio/kotlinandroiddasarprep/LoginActivity.kt,2\9\298e9570999f9b2aa05e0f4796d6a434b35aa112
+{
+Kapp/src/main/java/com/anggastudio/kotlinandroiddasarprep/ProfileActivity.kt,e\a\ea0f5b46d7caa3857ece5daac391e14300da0f2d
+|
+Lapp/src/main/java/com/anggastudio/kotlinandroiddasarprep/EditTextFragment.kt,a\3\a3f50ed466e12ec45170d66b370666c0332cc2e5
