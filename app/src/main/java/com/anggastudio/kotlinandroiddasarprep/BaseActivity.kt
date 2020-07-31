@@ -6,6 +6,7 @@ import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 
 open class BaseActivity : AppCompatActivity() {
@@ -41,6 +42,17 @@ open class BaseActivity : AppCompatActivity() {
 
     protected open fun showToast(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
+    protected open fun showAlert(title: String, message: String) {
+        AlertDialog.Builder(this).apply {
+            setCancelable(false)
+            setTitle(title)
+            setMessage(message)
+            setPositiveButton("OK") { _, _ -> showToast("OK") }
+            setNegativeButton("Cancel") { _, _ -> showToast("Cancel") }
+            show()
+        }
     }
 
 }

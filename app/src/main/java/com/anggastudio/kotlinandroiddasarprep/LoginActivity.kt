@@ -17,10 +17,10 @@ class LoginActivity : BaseActivity() {
         val password = et_password.text.toString()
 
         when {
-            username.isEmpty() -> showToast("username is empty")
-            username != "angga" -> showToast("username is wrong")
-            password.isEmpty() -> showToast("password is empty")
-            password != "123" -> showToast("password is wrong")
+            username.isEmpty() -> showAlert("Username Field Error", "Username is empty!")
+            username != "angga" -> showAlert("Username Field Error", "Username is wrong!")
+            password.isEmpty() -> showAlert("Password Field Error", "Password is empty!")
+            password != "123" -> showAlert("Password Field Error", "Password is wrong!")
             else -> login()
         }
 
