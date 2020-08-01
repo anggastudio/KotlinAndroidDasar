@@ -34,8 +34,10 @@ open class BaseActivity : AppCompatActivity() {
         finish()
     }
 
-    protected open fun gotoProfileActivity() {
+    protected open fun gotoProfileActivity(user: User) {
         val intent = Intent(this, ProfileActivity::class.java)
+        intent.putExtra("fullName", user.fullName)
+        intent.putExtra("email", user.email)
         startActivity(intent)
         finish()
     }

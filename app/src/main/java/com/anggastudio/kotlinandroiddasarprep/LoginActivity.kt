@@ -18,16 +18,34 @@ class LoginActivity : BaseActivity() {
 
         when {
             username.isEmpty() -> showAlert("Username Field Error", "Username is empty!")
-            username != "angga" -> showAlert("Username Field Error", "Username is wrong!")
             password.isEmpty() -> showAlert("Password Field Error", "Password is empty!")
-            password != "123" -> showAlert("Password Field Error", "Password is wrong!")
-            else -> login()
+            else -> checkCredential(username, password)
         }
 
     }
 
-    private fun login() {
-        gotoProfileActivity()
+    private fun checkCredential(username: String, password: String) {
+        val userList = UserDummy.getUserList()
+        var isUserExist = false
+        var isPasswordMatch = false
+        userList.map {
+            if (it.username == username) {
+                isUserExist = true
+                if (it.password == password) {
+                    isPasswordMatch = true
+                    login(it)
+                }
+            }
+        }
+        if (!isUserExist) showAlert("Error", "Username '$username' is not Exist")
+        if (isUserExist && !isPasswordMatch) showAlert(
+            "Error",
+            "Password for '$username' is not match"
+        )
+    }
+
+    private fun login(user: User) {
+        gotoProfileActivity(user)
     }
 
 }

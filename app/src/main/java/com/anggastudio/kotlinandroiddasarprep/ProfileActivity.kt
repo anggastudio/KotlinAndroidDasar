@@ -14,6 +14,12 @@ class ProfileActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
 
+        val fullName = intent.getStringExtra("fullName")
+        val email = intent.getStringExtra("email")
+
+        if (!fullName.isNullOrEmpty()) tvFullName.text = fullName
+        if (!email.isNullOrEmpty()) tvEmail.text = email
+
         tvFullName.setOnClickListener { editText("Edit Full Name", tvFullName) }
         tvEmail.setOnClickListener { editText("Edit Email", tvEmail) }
         ivAvatar.setOnClickListener { openImagePicker() }
